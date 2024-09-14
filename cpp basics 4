@@ -1,0 +1,65 @@
+//Pointers
+#include<iostream>
+#include<string.h>
+using namespace std;
+void fun()        //Function defining
+{
+	auto int x=20;
+	static int y=30;
+	cout<<"The value of x is :"<<x<<endl;
+	cout<<"The value of y is :"<<y<<endl;
+	x++ ;
+	y++;
+}
+void fun1(int i,int j){					//function defining by passing arguments
+	cout<<"The value of i is:"<<i<<endl;
+	cout<<"The value of j is:"<<j<<endl;
+}
+
+struct stu     //structure 
+{
+	int roll;
+	char name;
+	float marks;
+	
+	
+};
+union sales{
+	int tokenNo;
+	char custName[50];
+	int quantity;
+	float total;
+	
+};
+int main(){
+	struct stu s;
+	cout<<"Enter student name:"<<endl;
+	cin>>s.name;
+	cout<<"Enter student roll number:"<<endl;
+	cin>>s.roll;
+	cout<<"Enter student marks:"<<endl;
+	cin>>s.marks;
+	cout<<s.name<<" "<<s.roll<<" "<<s.marks<<endl;
+	
+	
+	union sales s1;
+	cout<<"Enter your token Number:"<<endl;
+	cin>>s1.tokenNo;
+	cout<<"Enter Customer name:"<<endl;
+	cin>>s1.custName;
+	cout<<"Enter Quantity:"<<endl;
+	cin>>s1.quantity;
+	cout<<"your total is :"<<endl;
+	cin>>s1.total;
+	cout<<s1.tokenNo<<" "<<s1.custName<<" "<<s1.quantity<<" "<<s1.total<<endl;
+	fun(); 			//Function calling
+	fun(); 
+	fun1(100,200);       //passing values of function
+	int  a=10;
+	int *p;
+	p=&a;
+	cout<<"Address of a is:"<<&a<<endl;
+	cout<<p<<endl;
+	cout<<"The value of a is:"<<*p<<endl;
+	return 0;
+}
